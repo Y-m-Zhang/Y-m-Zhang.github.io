@@ -11,35 +11,21 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Biomedical Engineering &Instrumentation Science, Zhejiang University, 2018-2024
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Jun. 2024 - Dec. 2025:
+  * Postdoctoral Research Fellow in Electronic Engineering
+  * The Chinese University of Hong Kong, Hong Kong
+  * Supervisor: Prof. Yuanting Zhang (IEEE Life Fellow) & Prof. Ni Zhao
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Biomedical signal analysis
+* Interpretable/personalized AI algorithms
+* Edge deployment on AI embedded device
+* Wearable sensor hardware design
 
 Publications
 ======
