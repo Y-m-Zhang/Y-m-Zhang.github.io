@@ -12,7 +12,7 @@ validation for non-invasive, real-time physiological signal monitoring and cardi
 large-scale clinical data acquisition, signal analysis, interpretable/personalized AI/ML, edge deployment, and wearable device
 prototyping. 
 
-You can find my CV here: ../assets/yimingzhang CV.pdf
+You can find my CV here: [Yiming Zhang's CV](../assets/yimingzhang CV.pdf)
 
 A data-driven personal website
 ======
