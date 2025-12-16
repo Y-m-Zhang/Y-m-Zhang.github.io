@@ -23,7 +23,7 @@ repository               : "Y-m-Zhang/Y-m-Zhang.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "images/0319-11.png"
+  avatar           : "https://github.com/Y-m-Zhang/Y-m-Zhang.github.io/blob/09744389e2c6a4c084cdb63a67bf481033d9d6c9/images/0319-11.png"
   name             : "Yiming Zhang"
   pronouns         : # example: "she/her"  
   bio              : "Research Scientist"
