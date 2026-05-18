@@ -179,6 +179,64 @@ strong { font-weight: 600; }
   font-variant-numeric: tabular-nums;
 }
 
+/* Two-column section: Experience + Research Interests side by side */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+.two-col > section { margin-bottom: 0; }
+@media (max-width: 600px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .two-col > section { margin-bottom: 56px; }
+  .two-col > section:last-child { margin-bottom: 56px; }
+}
+
+/* Compact rows for Experience inside two-col */
+.compact-row {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.compact-row:first-child { padding-top: 0; }
+.compact-row:last-child { border-bottom: none; padding-bottom: 0; }
+.compact-row-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.compact-row-sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.compact-row-meta {
+  color: var(--soft);
+  font-size: 13px;
+}
+
+/* Research interests bullet list */
+.interest-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+.interest-list li {
+  padding: 6px 0 6px 16px;
+  position: relative;
+  color: var(--fg);
+}
+.interest-list li::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  color: var(--soft);
+}
+
 /* Two-column rows (Education / Experience) */
 .row {
   display: grid;
