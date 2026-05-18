@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Yiming Zhang</title>
+  <meta name="description" content="Research projects by Yiming Zhang." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Yiming Zhang</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="cv.html">CV</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <h1 class="page-title">Projects</h1>
+      <p class="page-subtitle">Funded research projects I have led or contributed to as a key researcher.</p>
+    </header>
+
+    <section id="proj-ppg-foundation">
+      <h2>2025 – Present</h2>
+
+      <article class="project">
+        <h3 class="project-title">
+          <span>Unleashing the Potential of PPG for Wearable Healthcare</span>
+          <span class="project-meta">Aug 2025 – Present</span>
+        </h3>
+        <p style="font-size: 14px; color: var(--muted); margin: 0 0 12px;">
+          <strong>Singapore MOE AcRF Tier 2</strong> · 1M SGD · Key Researcher
+        </p>
+        <p class="project-desc" style="color: var(--fg);">
+          A multi-pronged effort to push PPG from a single-purpose sensor into
+          a general-purpose modality for wearable health AI.
+        </p>
+        <ul style="margin-top: 12px; padding-left: 20px; color: var(--muted); font-size: 15px;">
+          <li>
+            <strong>PPG-Sport.</strong> The first bilateral-wrist PPG dataset
+            (48 hours) for high-intensity sports, addressing the gap in
+            non-periodic motion artifact research.
+          </li>
+          <li>
+            <strong>CP-PPG.</strong> A GAN-based framework that recovers
+            distorted waveforms caused by poor skin-sensor contact, improving
+            signal fidelity by 40%.
+          </li>
+          <li>
+            <strong>Motion-aware HR estimation.</strong> A weakly-supervised
+            motion-proxy framework that maintains high accuracy in
+            interference-heavy racket sports.
+          </li>
+          <li>
+            <strong>PulseLM.</strong> The first PPG-to-Text benchmark, aligning
+            heterogeneous physiological signals with LLMs to enable
+            cross-modal reasoning across 12+ clinical tasks.
+          </li>
+        </ul>
+        <p style="margin-top: 12px; font-size: 14px; color: var(--soft);">
+          Outputs to date: 1 top-tier SCI paper, 3 conference papers.
+        </p>
+      </article>
+    </section>
+
+    <section id="proj-bp-smartwatch">
+      <h2>2024 – 2025</h2>
+
+      <article class="project">
+        <h3 class="project-title">
+          <span>Cuffless BP Smartwatch with Multi-Wavelength PPG &amp; ECG</span>
+          <span class="project-meta">Sep 2024 – Nov 2025</span>
+        </h3>
+        <p style="font-size: 14px; color: var(--muted); margin: 0 0 12px;">
+          <strong>Industry–Academic Collaboration</strong> · 6.02M HKD · Project Lead
+        </p>
+        <p class="project-desc" style="color: var(--fg);">
+          Led a large-scale clinical study using smartwatches with
+          multi-wavelength PPG and single-lead ECG.
+        </p>
+        <ul style="margin-top: 12px; padding-left: 20px; color: var(--muted); font-size: 15px;">
+          <li>
+            Led a 10+ person cross-functional team and oversaw end-to-end
+            project execution: planning, resource allocation, field
+            coordination, quality control, and final delivery.
+          </li>
+          <li>
+            Designed clinical trial protocols, ethical approval documents, and
+            collaboration agreements, collecting high-quality data from
+            <strong>~7,000 participants across 7 hospitals</strong> and
+            community health centers.
+          </li>
+          <li>
+            Developed interpretable, lightweight, high-performance AI for
+            accurate blood pressure monitoring and vascular condition
+            identification.
+          </li>
+        </ul>
+        <p style="margin-top: 12px; font-size: 14px; color: var(--soft);">
+          Outputs: 2 top-tier SCI papers.
+        </p>
+      </article>
+    </section>
+
+    <section id="proj-reliability">
+      <h2>2017 – 2021</h2>
+
+      <article class="project">
+        <h3 class="project-title">
+          <span>Reliability Testing of Wearable Smart Products</span>
+          <span class="project-meta">Jul 2017 – Dec 2021</span>
+        </h3>
+        <p style="font-size: 14px; color: var(--muted); margin: 0 0 12px;">
+          <strong>National Key R&amp;D Program</strong> · 5M CNY · Key Researcher
+        </p>
+        <p class="project-desc" style="color: var(--fg);">
+          Developed an end-to-end stack — from interpretable models to
+          ring-type prototypes — for reliable long-term wearable monitoring.
+        </p>
+        <ul style="margin-top: 12px; padding-left: 20px; color: var(--muted); font-size: 15px;">
+          <li>
+            Interpretable blood pressure and core-temperature estimation models
+            grounded in ECG/PPG/ABP correlations in human microcirculation.
+          </li>
+          <li>
+            Adaptive calibration algorithms achieving long-term tracking gains
+            of <strong>SBP +36.6%, DBP +32.3%</strong>, and 92% screening
+            accuracy for cardiovascular risks.
+          </li>
+          <li>
+            Ring-type wearable hardware prototypes with AI models optimized on
+            NVIDIA Jetson for real-time, low-power edge inference.
+          </li>
+        </ul>
+        <p style="margin-top: 12px; font-size: 14px; color: var(--soft);">
+          Outputs: 5 SCI papers, 1 EI paper, 3 patents.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Yiming Zhang</span>
+    <span><a href="index.html">← Home</a></span>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
