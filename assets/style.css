@@ -101,12 +101,10 @@ main {
   object-fit: cover;
   flex-shrink: 0;
   background: var(--line);
-  order: 2;
 }
 .home-header .home-header-text {
   flex: 1;
   min-width: 0;
-  order: 1;
 }
 .home-header .page-title,
 .home-header .page-subtitle {
@@ -335,9 +333,7 @@ footer {
   .home-header .avatar {
     width: 96px;
     height: 96px;
-    order: 0;
   }
-  .home-header .home-header-text { order: 1; }
   .news-list li { grid-template-columns: 72px 1fr; gap: 12px; }
   .row { grid-template-columns: 1fr; }
   .row-meta { font-size: 13px; }
