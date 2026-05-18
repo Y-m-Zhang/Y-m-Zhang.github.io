@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yiming Zhang — Personal Homepage</title>
-  <meta name="description" content="Yiming Zhang — Research Scientist at SMU. AI-driven wearable healthcare & health informatics." />
+  <title>Yiming Zhang — Research Scientist</title>
+  <meta name="description" content="Yiming Zhang — Research Scientist at Singapore Management University. AI-driven wearable healthcare & health informatics." />
   <style>
     :root {
       --bg: #ffffff;
       --fg: #111111;
       --muted: #6b6b6b;
+      --soft: #8a8a8a;
       --line: #e5e5e5;
-      --accent: #111111;
-      --radius: 6px;
-      --maxw: 720px;
+      --maxw: 760px;
     }
 
     * { box-sizing: border-box; }
@@ -47,9 +46,7 @@
     }
 
     /* Header */
-    header {
-      margin-bottom: 64px;
-    }
+    header { margin-bottom: 48px; }
     .name {
       font-size: 28px;
       font-weight: 600;
@@ -58,14 +55,26 @@
     }
     .tagline {
       color: var(--muted);
-      margin: 0;
+      margin: 0 0 16px;
       font-size: 16px;
+    }
+    .header-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+    }
+    .header-links a {
+      color: var(--muted);
+      border-bottom-color: transparent;
+    }
+    .header-links a:hover {
+      color: var(--fg);
+      border-bottom-color: var(--fg);
     }
 
     /* Sections */
-    section {
-      margin-bottom: 64px;
-    }
+    section { margin-bottom: 56px; }
     h2 {
       font-size: 13px;
       font-weight: 600;
@@ -79,6 +88,97 @@
 
     p { margin: 0 0 16px; }
     p:last-child { margin-bottom: 0; }
+    em { font-style: italic; }
+    strong { font-weight: 600; }
+
+    /* News */
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 15px;
+    }
+    .news-list li {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 16px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .news-list li:last-child { border-bottom: none; }
+    .news-date {
+      color: var(--soft);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Two-column rows (Education / Experience) */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 24px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .row:last-child { border-bottom: none; }
+    .row-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .row-meta {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    .row-sub {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: -4px;
+    }
+
+    /* Publications */
+    .pub {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+    .pub:last-child { border-bottom: none; }
+    .pub-num {
+      color: var(--soft);
+      font-variant-numeric: tabular-nums;
+      margin-right: 6px;
+    }
+    .pub-authors { color: var(--fg); }
+    .pub-authors .me {
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+    .pub-title {
+      color: var(--fg);
+    }
+    .pub-venue {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .pub-tag {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: var(--muted);
+      margin-left: 6px;
+      vertical-align: 1px;
+      white-space: nowrap;
+    }
+    .pub-cite {
+      font-size: 13px;
+      color: var(--soft);
+      margin-left: 6px;
+    }
 
     /* Projects */
     .project {
@@ -103,35 +203,28 @@
     }
     .project-desc {
       color: var(--muted);
-      margin: 4px 0 8px;
-    }
-    .project-links {
-      font-size: 14px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .project-links a {
-      color: var(--muted);
-      border-bottom-color: transparent;
-    }
-    .project-links a:hover {
-      color: var(--fg);
-      border-bottom-color: var(--fg);
+      margin: 4px 0 0;
     }
 
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 12px 24px;
+    /* Honors / Service lists */
+    .plain-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       font-size: 15px;
     }
-    .skill-label {
-      color: var(--muted);
+    .plain-list li {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px 24px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
     }
-    .skill-value {
-      color: var(--fg);
+    .plain-list li:last-child { border-bottom: none; }
+    .plain-list .meta {
+      color: var(--soft);
+      font-size: 13px;
+      white-space: nowrap;
     }
 
     /* Contact */
@@ -144,16 +237,12 @@
       gap: 12px 24px;
       font-size: 15px;
     }
-    .contact-list dt {
-      color: var(--muted);
-    }
-    .contact-list dd {
-      margin: 0;
-    }
+    .contact-list dt { color: var(--muted); }
+    .contact-list dd { margin: 0; }
 
     /* Footer */
     footer {
-      margin-top: 96px;
+      margin-top: 80px;
       padding-top: 24px;
       border-top: 1px solid var(--line);
       font-size: 13px;
@@ -165,23 +254,24 @@
     }
 
     /* Responsive */
-    @media (max-width: 560px) {
+    @media (max-width: 600px) {
       main { padding: 64px 20px 80px; }
       .name { font-size: 24px; }
-      .skills-grid,
+      .news-list li { grid-template-columns: 72px 1fr; gap: 12px; }
+      .row { grid-template-columns: 1fr; }
+      .row-meta { font-size: 13px; }
+      .plain-list li { grid-template-columns: 1fr; gap: 2px; }
       .contact-list {
         grid-template-columns: 1fr;
-        gap: 4px 0;
+        gap: 2px 0;
       }
-      .skills-grid > div + div,
-      .contact-list dd { margin-bottom: 12px; }
+      .contact-list dd { margin-bottom: 10px; }
       .project-title {
         flex-direction: column;
         gap: 2px;
       }
     }
 
-    /* Selection */
     ::selection {
       background: var(--fg);
       color: var(--bg);
@@ -193,29 +283,236 @@
     <header>
       <h1 class="name">Yiming Zhang</h1>
       <p class="tagline">Research Scientist · Singapore Management University</p>
+      <div class="header-links">
+        <a href="mailto:yimingz456@gmail.com">Email</a>
+        <a href="https://scholar.google.com.hk/citations?user=-_-2jZwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://github.com/Y-m-Zhang" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </header>
 
     <section id="about">
       <h2>About</h2>
       <p>
-        I am a Research Scientist at Singapore Management University, working on
-        <em>AI-driven wearable healthcare and health informatics</em>. My research
-        spans large-scale clinical data acquisition, biomedical signal analysis,
-        interpretable and personalized AI/ML, edge deployment, and wearable
-        device prototyping.
+        I am a Research Scientist at <strong>Singapore Management
+        University</strong>, working on <em>AI-driven wearable healthcare and
+        health informatics</em>. My research spans large-scale clinical data
+        acquisition, biomedical signal analysis, interpretable and personalized
+        AI/ML, edge deployment, and wearable device prototyping.
       </p>
       <p>
-        I received my Ph.D. in Biomedical Engineering from Zhejiang University in
-        2024, and was a Postdoctoral Research Fellow at The Chinese University of
-        Hong Kong (2024–2025), supervised by Prof. Yuanting Zhang (IEEE Life
-        Fellow) and Prof. Ni Zhao. I have authored 17 peer-reviewed publications
-        (7 as first/co-first author).
+        I received my Ph.D. in Biomedical Engineering &amp; Instrumentation
+        Science from <strong>Zhejiang University</strong> in 2024, and was a
+        Postdoctoral Research Fellow at <strong>The Chinese University of Hong
+        Kong</strong> (2024&ndash;2025), supervised by Prof. Yuanting Zhang
+        (IEEE Life Fellow) and Prof. Ni Zhao. I have authored 17 peer-reviewed
+        publications (7 as first / co-first author).
       </p>
       <p>
-        I am currently interested in foundation models for physiological
-        signals, motion-robust wearable sensing, and translating research
-        prototypes into deployable health systems.
+        I am currently interested in <strong>foundation models for
+        physiological signals</strong>, motion-robust wearable sensing, and
+        translating research prototypes into deployable health systems.
       </p>
+    </section>
+
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li>
+          <span class="news-date">2026</span>
+          <span>Paper accepted in <em>Nano-Micro Letters</em> (IF&nbsp;36.3): AI-Enhanced Wearable Blood Pressure Monitoring in Resource-Limited Settings.</span>
+        </li>
+        <li>
+          <span class="news-date">2025·12</span>
+          <span>Joined <strong>Singapore Management University</strong> as a Research Scientist.</span>
+        </li>
+        <li>
+          <span class="news-date">2025·08</span>
+          <span>Joined the Singapore MOE AcRF Tier&nbsp;2 project <em>"Unleashing the Potential of PPG for Wearable Healthcare"</em> as a Key Researcher.</span>
+        </li>
+        <li>
+          <span class="news-date">2025</span>
+          <span>Paper accepted in <em>IEEE J-BHI</em>: Personalized Continuous Blood Pressure Tracking through Single-Channel PPG.</span>
+        </li>
+        <li>
+          <span class="news-date">2024·11</span>
+          <span>Invited Speaker at IEEE&nbsp;MDBS &amp; BHE; Invited Talk at Zhejiang Sci-Tech University High-Level Talent Forum.</span>
+        </li>
+        <li>
+          <span class="news-date">2024·06</span>
+          <span>Started as Postdoctoral Research Fellow at <strong>The Chinese University of Hong Kong</strong>.</span>
+        </li>
+        <li>
+          <span class="news-date">2024·03</span>
+          <span>Received my Ph.D. from <strong>Zhejiang University</strong>.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p style="color: var(--muted); font-size: 14px; margin-bottom: 20px;">
+        17 peer-reviewed publications (7 as first / co-first author). Full
+        list and citation counts on
+        <a href="https://scholar.google.com.hk/citations?user=-_-2jZwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>.
+        <span class="me" style="font-weight:600;text-decoration:underline;text-underline-offset:3px;">Underlined</span>
+        = me. <span class="pub-tag">*</span> = co-first author.
+      </p>
+
+      <article class="pub">
+        <span class="pub-num">[1]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span>, S. Qiu, K. Du, S. Wu, T. Xiang, K. Zheng, Z. Liu, H. Chen, N. Ji, et al.</span>
+        "Artificial Intelligence-Enhanced Wearable Blood Pressure Monitoring in Resource-Limited Settings: A Co-Design of Sensors, Models, and Deployment."
+        <span class="pub-venue">Nano-Micro Letters</span>, 18(1), 2026.
+        <span class="pub-tag">Q1 · IF 36.3</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[2]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span></span>.
+        "Equitable and Interpretable Cuffless Blood Pressure Monitoring Using Distributed Wearable Spectral Sensors in a Multi-Cohort Trial." 2026.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[3]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span>, D. Ma, et&nbsp;al.</span>
+        "Motion-Aware Wrist HR Estimation with Weakly-Supervised Motion Proxy."
+        <span class="pub-venue">IEEE EMBC</span>, 2026.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[4]</span>
+        <span class="pub-authors">H. M. Pham, J. Wu, X. Ma, <span class="me">Y. Zhang</span>, Y. Xu, A. Saeed, B. Zhu, Z. Pan, D. Ma.</span>
+        "PulseLM: A Foundation Dataset and Benchmark for PPG-Text Learning."
+        <span class="pub-venue">arXiv:2603.03331</span>, 2026.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[5]</span>
+        <span class="pub-authors">D. Ma, <span class="me">Y. Zhang</span>, et&nbsp;al.</span>
+        "PPG-Sport: A Dataset for Reliable Heart Rate Monitoring from Wrist PPG Under Dynamic Sports Conditions."
+        <span class="pub-venue">ACM</span>, 2026.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[6]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span>, C. Zhou, X. Ren, Q. Wang, H. Wang, T. Xiang, S. Qiu, Y.&#8209;T. Zhang, et&nbsp;al.</span>
+        "Personalized Continuous Blood Pressure Tracking through Single-Channel PPG in Wearable Scenarios."
+        <span class="pub-venue">IEEE Journal of Biomedical and Health Informatics</span>, 29(6), 2025.
+        <span class="pub-tag">Q1 · IF 6.7</span>
+        <span class="pub-cite">17 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[7]</span>
+        <span class="pub-authors">T. Xiang, Y. Jin, Z. Liu, L. Clifton, D. A. Clifton, <span class="me">Y. Zhang</span>, Q. Zhang, N. Ji, et&nbsp;al.</span>
+        "Dynamic Beat-to-Beat Measurements of Blood Pressure Using Multimodal Physiological Signals and a Hybrid CNN-LSTM Model."
+        <span class="pub-venue">IEEE Journal of Biomedical and Health Informatics</span>, 29(8), 2025.
+        <span class="pub-cite">11 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[8]</span>
+        <span class="pub-authors">H. M. Pham, M. Y. Ho, <span class="me">Y. Zhang</span>, D. Spathis, A. Saeed, D. Ma.</span>
+        "Reliable Wrist PPG Monitoring by Mitigating Poor Skin-Sensor Contact."
+        <span class="pub-venue">Scientific Reports</span>, 2025.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[9]</span>
+        <span class="pub-authors">H. Chen, Z. Zeng, <span class="me">Y. Zhang</span>, L. Lyu, R. H. M. Chan, Y. Zhang, R. Wei.</span>
+        "Multi-Wavelength Photoplethysmographic Assessment of Fingertip Vasculature for Auto-Calibrated Cuffless Blood Pressure Monitoring."
+        <span class="pub-venue">IEEE Journal of Biomedical and Health Informatics</span>, 2025.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[10]</span>
+        <span class="pub-authors">S. Qiu, T. Xiao, Y. Li, X. Yu, S. Wu, <span class="me">Y. Zhang</span>, Y. Lin, N. Zhao.</span>
+        "A Multi-Modal Smart Chest Patch for Real-Time Cardiopulmonary Monitoring and Anomaly Detection."
+        <span class="pub-venue">Science China Materials</span>, 2025.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[11]</span>
+        <span class="pub-authors">X. Ren, <span class="me">Y. Zhang</span>, H. Yang, K. Li, X. Ye, C. Zhou.</span>
+        "Core Body Temperature Estimation Model with Thermal Contact Resistance Compensation."
+        <span class="pub-venue">Measurement</span>, 241, 2025.
+        <span class="pub-tag">Q1 · IF 5.2</span>
+        <span class="pub-tag">*</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[12]</span>
+        <span class="pub-authors">Z. Liu, <span class="me">Y. Zhang</span>, C. Zhou.</span>
+        "BiGRU-Attention for Continuous Blood Pressure Trends Estimation through Single-Channel PPG."
+        <span class="pub-venue">Computers in Biology and Medicine</span>, 168, 2024.
+        <span class="pub-tag">Q1 · IF 7.0</span>
+        <span class="pub-cite">42 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[13]</span>
+        <span class="pub-authors">W. Wu, <span class="me">Y. Zhang</span>, Y. He, L. Zhang, Z. Lou, H. Zhou, X. Bai.</span>
+        "DSText V2: A Comprehensive Video Text Spotting Dataset for Dense and Small Text."
+        <span class="pub-venue">Pattern Recognition</span>, 149, 2024.
+        <span class="pub-cite">11 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[14]</span>
+        <span class="pub-authors">W. Shi, C. Zhou, <span class="me">Y. Zhang</span>, K. Li, X. Ren, H. Liu, X. Ye.</span>
+        "Hybrid Modeling on Reconstitution of Continuous Arterial Blood Pressure Using Finger Photoplethysmography."
+        <span class="pub-venue">Biomedical Signal Processing and Control</span>, 85, 2023.
+        <span class="pub-cite">51 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[15]</span>
+        <span class="pub-authors">X. Ren, <span class="me">Y. Zhang</span>, X. Ye, C. Zhou.</span>
+        "Study of Perfusion-Based Theoretical Model and Experimental Evaluation for Wearable CBT Measurement."
+        <span class="pub-venue">Measurement</span>, 206, 2023.
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[16]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span>, X. Ren, X. Liang, X. Ye, C. Zhou.</span>
+        "A Refined Blood Pressure Estimation Model Based on Single-Channel Photoplethysmography."
+        <span class="pub-venue">IEEE Journal of Biomedical and Health Informatics</span>, 26(12), 2022.
+        <span class="pub-tag">Q1 · IF 6.7</span>
+        <span class="pub-cite">67 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[17]</span>
+        <span class="pub-authors">T. Li, B. Liang, Z. Ye, L. Zhang, S. Xu, T. Tu, <span class="me">Y. Zhang</span>, Y. Cai, B. Zhang, L. Fang, et&nbsp;al.</span>
+        "An Integrated and Conductive Hydrogel-Paper Patch for Simultaneous Sensing of Chemical&ndash;Electrophysiological Signals."
+        <span class="pub-venue">Biosensors and Bioelectronics</span>, 198, 2022.
+        <span class="pub-cite">123 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[18]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span>, C. Zhou, Z. Huang, X. Ye.</span>
+        "Study of Cuffless Blood Pressure Estimation Method Based on Multiple Physiological Parameters."
+        <span class="pub-venue">Physiological Measurement</span>, 42(5), 2021.
+        <span class="pub-tag">Q2 · IF 2.3</span>
+        <span class="pub-cite">28 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[19]</span>
+        <span class="pub-authors">C. Zhou, H. Wang, <span class="me">Y. Zhang</span>, X. Ye.</span>
+        "Study of a Ring-Type Surgical Pleth Index Monitoring System Based on Flexible PPG Sensor."
+        <span class="pub-venue">IEEE Sensors Journal</span>, 21(13), 2020.
+        <span class="pub-cite">28 citations</span>
+      </article>
+
+      <article class="pub">
+        <span class="pub-num">[20]</span>
+        <span class="pub-authors"><span class="me">Y. Zhang</span>, C. Zhou, Z. Huang, X. Ye.</span>
+        "Development of a Continuous Blood Pressure Monitoring System Based on Pulse Transit Time and Hemodynamic Covariates."
+        <span class="pub-venue">BIODEVICES</span>, 2020.
+        <span class="pub-cite">12 citations</span>
+      </article>
     </section>
 
     <section id="projects">
@@ -227,10 +524,12 @@
           <span class="project-meta">2025 – Present</span>
         </h3>
         <p class="project-desc">
-          Singapore MOE AcRF Tier 2 Project (1M SGD) · Key Researcher. Building
-          PulseLM, the first PPG-to-Text foundation model; CP-PPG, a GAN
-          framework recovering distorted waveforms by 40%; and PPG-Sport, the
-          first bilateral-wrist PPG dataset for high-intensity sports.
+          <strong>Singapore MOE AcRF Tier 2</strong> (1M&nbsp;SGD) · Key
+          Researcher. Building <em>PulseLM</em>, the first PPG-to-Text
+          foundation model and benchmark for 12+ clinical tasks; <em>CP-PPG</em>,
+          a GAN framework recovering distorted waveforms with +40% signal
+          fidelity; and <em>PPG-Sport</em>, the first bilateral-wrist PPG
+          dataset (48h) for high-intensity sports.
         </p>
       </article>
 
@@ -240,10 +539,13 @@
           <span class="project-meta">2024 – 2025</span>
         </h3>
         <p class="project-desc">
-          Industry–Academic Collaboration (6.02M HKD) · Project Lead. Led a
-          10+ person team and a large-scale clinical study across 7 hospitals
-          (~7,000 participants), delivering interpretable, lightweight AI for
-          blood pressure monitoring and vascular condition identification.
+          <strong>Industry–Academic Collaboration</strong> (6.02M&nbsp;HKD) ·
+          Project Lead. Led a 10+ person cross-functional team and a
+          large-scale clinical study collecting high-quality data from ~7,000
+          participants across 7 hospitals and community health centers.
+          Delivered interpretable, lightweight AI methods for blood pressure
+          monitoring and vascular condition identification. Contributed to 2
+          top-tier SCI papers.
         </p>
       </article>
 
@@ -253,82 +555,114 @@
           <span class="project-meta">2017 – 2021</span>
         </h3>
         <p class="project-desc">
-          National Key R&amp;D Program (5M CNY) · Key Researcher. Built
-          interpretable BP and core-temperature models from ECG/PPG/ABP;
-          adaptive calibration improved long-term tracking accuracy (SBP
-          +36.6%, DBP +32.3%) and reached 92% CV-risk screening accuracy on
-          Jetson edge prototypes.
+          <strong>National Key R&amp;D Program</strong> (5M&nbsp;CNY) · Key
+          Researcher. Built interpretable BP and core-temperature models from
+          ECG/PPG/ABP correlations in human microcirculation. Adaptive
+          calibration improved long-term BP tracking (SBP&nbsp;+36.6%,
+          DBP&nbsp;+32.3%) and reached 92% CV-risk screening accuracy. Built
+          ring-type wearable prototypes optimized on NVIDIA Jetson for
+          real-time, low-power edge inference. Contributed to 5 SCI papers, 1
+          EI paper, and 3 patents.
         </p>
       </article>
     </section>
 
-    <section id="publications">
-      <h2>Selected Publications</h2>
+    <section id="education">
+      <h2>Education</h2>
 
-      <article class="project">
-        <h3 class="project-title">
-          <span>AI-Enhanced Wearable Blood Pressure Monitoring in Resource-Limited Settings</span>
-          <span class="project-meta">Nano-Micro Letters, 2026</span>
-        </h3>
-        <p class="project-desc">
-          <strong>Y. Zhang</strong>, S. Qiu, et al. A co-design of sensors,
-          models, and deployment. <em>Q1 Top, IF = 36.3</em>.
-        </p>
-      </article>
-
-      <article class="project">
-        <h3 class="project-title">
-          <span>Personalized Continuous BP Tracking via Single-Channel PPG</span>
-          <span class="project-meta">IEEE J-BHI, 2025</span>
-        </h3>
-        <p class="project-desc">
-          <strong>Y. Zhang</strong>, Y. Zhang, X. Ye, et al. Wearable-scenario
-          personalization for continuous BP tracking. <em>Q1 Top, IF = 6.7</em>.
-        </p>
-      </article>
-
-      <article class="project">
-        <h3 class="project-title">
-          <span>Motion-Aware Wrist HR Estimation with Weakly-Supervised Motion Proxy</span>
-          <span class="project-meta">IEEE EMBC, 2026</span>
-        </h3>
-        <p class="project-desc">
-          <strong>Y. Zhang</strong>, D. Ma, et al. Robust HR estimation under
-          interference-heavy motion using weakly-supervised proxies.
-        </p>
-      </article>
-
-      <article class="project">
-        <h3 class="project-title">
-          <span>BiGRU-Attention for Continuous BP Trends from Single-Channel PPG</span>
-          <span class="project-meta">Computers in Biology and Medicine, 2023</span>
-        </h3>
-        <p class="project-desc">
-          <strong>Y. Zhang</strong>, Z. Liu, et al. <em>Q1, IF = 7.0</em>.
-        </p>
-      </article>
-
-      <p style="margin-top:16px;font-size:14px;">
-        Full list on
-        <a href="https://scholar.google.com.hk/citations?user=-_-2jZwAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a>.
-      </p>
-    </section>
-
-    <section id="research">
-      <h2>Research</h2>
-      <div class="skills-grid">
-        <div class="skill-label">Focus</div>
-        <div class="skill-value">AI-driven wearable healthcare · Health informatics</div>
-
-        <div class="skill-label">Signals</div>
-        <div class="skill-value">PPG · ECG · ABP · Multi-modal physiological data</div>
-
-        <div class="skill-label">Methods</div>
-        <div class="skill-value">Interpretable &amp; personalized AI/ML · Foundation models · Generative AI for sensing</div>
-
-        <div class="skill-label">Systems</div>
-        <div class="skill-value">Edge deployment (NVIDIA Jetson) · Wearable device prototyping · Large-scale clinical studies</div>
+      <div class="row">
+        <div class="row-title">Ph.D. in Biomedical Engineering &amp; Instrumentation Science</div>
+        <div class="row-meta">Sep 2018 – Mar 2024</div>
+        <div class="row-sub">Zhejiang University (ZJU), China</div>
       </div>
+
+      <div class="row">
+        <div class="row-title">B.E. in Biomedical Engineering</div>
+        <div class="row-meta">Sep 2014 – Jun 2018</div>
+        <div class="row-sub">
+          South-Central Minzu University, China &nbsp;·&nbsp;
+          GPA 4.0/4.0, Rank 1/116
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="row">
+        <div class="row-title">Research Scientist</div>
+        <div class="row-meta">Dec 2025 – Present</div>
+        <div class="row-sub">Singapore Management University, Singapore</div>
+      </div>
+
+      <div class="row">
+        <div class="row-title">Postdoctoral Research Fellow</div>
+        <div class="row-meta">Jun 2024 – Dec 2025</div>
+        <div class="row-sub">
+          The Chinese University of Hong Kong, Hong Kong &nbsp;·&nbsp;
+          Supervisors: Prof. Yuanting Zhang (IEEE Life Fellow), Prof. Ni Zhao
+        </div>
+      </div>
+    </section>
+
+    <section id="honors">
+      <h2>Honors</h2>
+      <ul class="plain-list">
+        <li>
+          <span>Excellent Graduate Student, Zhejiang University</span>
+          <span class="meta">2019–2022</span>
+        </li>
+        <li>
+          <span>First Prize (Champion) · 1st Innovation &amp; Entrepreneurship Competition of Zijingang Science City</span>
+          <span class="meta">2018</span>
+        </li>
+        <li>
+          <span>National Scholarship</span>
+          <span class="meta">2017</span>
+        </li>
+        <li>
+          <span>Second Prize (Hubei) · "Lanqiao Cup" Software Design Competition</span>
+          <span class="meta">Mar 2017</span>
+        </li>
+        <li>
+          <span>First Prize · National Biomedical Engineering Electronic Innovation Design Contest</span>
+          <span class="meta">Dec 2016</span>
+        </li>
+        <li>
+          <span>Third Prize (Hubei) · National College Students Electronic Design Competition</span>
+          <span class="meta">Aug 2016</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="service">
+      <h2>Service &amp; Activities</h2>
+      <ul class="plain-list">
+        <li>
+          <span>Junior Fellow, Hong Kong Institutes of Medical Engineering Limited (KIME)</span>
+          <span class="meta">Member</span>
+        </li>
+        <li>
+          <span>Member, IEEE P1708 Working Group on Wearable Cuffless Blood Pressure Measuring Devices</span>
+          <span class="meta">Member</span>
+        </li>
+        <li>
+          <span>Reviewer · IEEE J-BHI, Scientific Reports, Computers in Biology and Medicine, Physiological Measurement, Biomedical Signal Processing and Control, Sensors, IEEE TCE</span>
+          <span class="meta">Reviewer</span>
+        </li>
+        <li>
+          <span>Invited Speaker · 22nd IEEE MDBS &amp; 15th BHE Symposium</span>
+          <span class="meta">Nov 2024</span>
+        </li>
+        <li>
+          <span>Invited Talk · Zhejiang Sci-Tech University High-Level Talent Forum</span>
+          <span class="meta">Nov 2024</span>
+        </li>
+        <li>
+          <span>Oral Presentation · 13th International Joint Conference on Biomedical Engineering Systems and Technologies (BIOSTEC)</span>
+          <span class="meta">Feb 2021</span>
+        </li>
+      </ul>
     </section>
 
     <section id="contact">
@@ -338,13 +672,13 @@
         <dd><a href="mailto:yimingz456@gmail.com">yimingz456@gmail.com</a></dd>
 
         <dt>Scholar</dt>
-        <dd><a href="https://scholar.google.com.hk/citations?user=-_-2jZwAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Google Scholar</a></dd>
+        <dd><a href="https://scholar.google.com.hk/citations?user=-_-2jZwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></dd>
 
         <dt>GitHub</dt>
         <dd><a href="https://github.com/Y-m-Zhang" target="_blank" rel="noopener">github.com/Y-m-Zhang</a></dd>
 
         <dt>Affiliation</dt>
-        <dd>Singapore Management University</dd>
+        <dd>Singapore Management University, Singapore</dd>
       </dl>
     </section>
 
