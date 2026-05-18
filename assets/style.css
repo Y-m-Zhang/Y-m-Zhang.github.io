@@ -19,8 +19,24 @@ html, body {
                "Microsoft YaHei", sans-serif;
   font-size: 16px;
   line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep headers, nav, meta, etc. left-aligned (justify only makes sense for prose) */
+h1, h2, h3,
+.nav, .nav-brand, .nav-links,
+.page-title, .page-subtitle, .header-links,
+.row-meta, .news-date, .pub-num, .pub-tag, .pub-cite,
+.plain-list .meta,
+footer {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
 }
 
 a {
