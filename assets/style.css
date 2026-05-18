@@ -86,6 +86,32 @@ main {
   margin: 0 0 16px;
   font-size: 16px;
 }
+
+/* Home header with avatar */
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 48px;
+}
+.home-header .avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--line);
+  order: 2;
+}
+.home-header .home-header-text {
+  flex: 1;
+  min-width: 0;
+  order: 1;
+}
+.home-header .page-title,
+.home-header .page-subtitle {
+  margin-top: 0;
+}
 .header-links {
   display: flex;
   flex-wrap: wrap;
@@ -301,6 +327,17 @@ footer {
   .nav { padding: 16px 20px 0; gap: 12px; }
   .nav-links { gap: 16px; }
   .page-title { font-size: 24px; }
+  .home-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .home-header .avatar {
+    width: 96px;
+    height: 96px;
+    order: 0;
+  }
+  .home-header .home-header-text { order: 1; }
   .news-list li { grid-template-columns: 72px 1fr; gap: 12px; }
   .row { grid-template-columns: 1fr; }
   .row-meta { font-size: 13px; }
