@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Personal Homepage</title>
+  <meta name="description" content="个人主页 — 简介、项目、技能与联系方式" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --muted: #6b6b6b;
+      --line: #e5e5e5;
+      --accent: #111111;
+      --radius: 6px;
+      --maxw: 720px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Helvetica Neue", "PingFang SC", "Hiragino Sans GB",
+                   "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: border-color 0.2s ease;
+    }
+    a:hover { border-bottom-color: var(--fg); }
+
+    main {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 96px 24px 120px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 64px;
+    }
+    .name {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px;
+    }
+    .tagline {
+      color: var(--muted);
+      margin: 0;
+      font-size: 16px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 64px;
+    }
+    h2 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    p { margin: 0 0 16px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* Projects */
+    .project {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .project:last-child { border-bottom: none; }
+    .project-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .project-meta {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .project-desc {
+      color: var(--muted);
+      margin: 4px 0 8px;
+    }
+    .project-links {
+      font-size: 14px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .project-links a {
+      color: var(--muted);
+      border-bottom-color: transparent;
+    }
+    .project-links a:hover {
+      color: var(--fg);
+      border-bottom-color: var(--fg);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px 24px;
+      font-size: 15px;
+    }
+    .skill-label {
+      color: var(--muted);
+    }
+    .skill-value {
+      color: var(--fg);
+    }
+
+    /* Contact */
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px 24px;
+      font-size: 15px;
+    }
+    .contact-list dt {
+      color: var(--muted);
+    }
+    .contact-list dd {
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 96px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      main { padding: 64px 20px 80px; }
+      .name { font-size: 24px; }
+      .skills-grid,
+      .contact-list {
+        grid-template-columns: 1fr;
+        gap: 4px 0;
+      }
+      .skills-grid > div + div,
+      .contact-list dd { margin-bottom: 12px; }
+      .project-title {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+
+    /* Selection */
+    ::selection {
+      background: var(--fg);
+      color: var(--bg);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1 class="name">Your Name</h1>
+      <p class="tagline">一句话介绍 — 例如:软件工程师 / 设计师 / 学生</p>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        在这里写一段 2–4 句的自我介绍。你是谁、在做什么、关心什么。
+        保持简短克制,留白即设计。
+      </p>
+      <p>
+        可以补充一个关于你近期关注方向的短句,
+        让访客快速理解你目前的兴趣点。
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <h3 class="project-title">
+          <span>项目名称 A</span>
+          <span class="project-meta">2025</span>
+        </h3>
+        <p class="project-desc">
+          一句话描述项目做了什么、解决了什么问题。可以包含使用的关键技术。
+        </p>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener">Live</a>
+          <a href="#" target="_blank" rel="noopener">Source</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3 class="project-title">
+          <span>项目名称 B</span>
+          <span class="project-meta">2024</span>
+        </h3>
+        <p class="project-desc">
+          项目描述占位。简短说明项目背景、你的贡献和成果。
+        </p>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener">Source</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3 class="project-title">
+          <span>项目名称 C</span>
+          <span class="project-meta">2023</span>
+        </h3>
+        <p class="project-desc">
+          项目描述占位。
+        </p>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener">Link</a>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-label">Languages</div>
+        <div class="skill-value">Python · TypeScript · Go</div>
+
+        <div class="skill-label">Frameworks</div>
+        <div class="skill-value">React · Next.js · FastAPI</div>
+
+        <div class="skill-label">Tools</div>
+        <div class="skill-value">Git · Docker · Linux</div>
+
+        <div class="skill-label">Other</div>
+        <div class="skill-value">技术写作 · 系统设计 · 团队协作</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <dl class="contact-list">
+        <dt>Email</dt>
+        <dd><a href="mailto:you@example.com">you@example.com</a></dd>
+
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></dd>
+
+        <dt>Twitter / X</dt>
+        <dd><a href="https://x.com/yourname" target="_blank" rel="noopener">@yourname</a></dd>
+
+        <dt>LinkedIn</dt>
+        <dd><a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener">linkedin.com/in/yourname</a></dd>
+      </dl>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Your Name</span>
+      <span>Made with care</span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
