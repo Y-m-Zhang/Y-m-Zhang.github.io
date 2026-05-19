@@ -196,7 +196,7 @@ strong { font-weight: 600; }
   .two-col > section:last-child { margin-bottom: 56px; }
 }
 
-/* Appointment-style rows with logo + role + date */
+/* Appointment-style rows: org + role on left, italic date on right */
 .appt-list {
   list-style: none;
   padding: 0;
@@ -204,26 +204,16 @@ strong { font-weight: 600; }
 }
 .appt-item {
   display: grid;
-  grid-template-columns: 28px 1fr auto;
+  grid-template-columns: 1fr auto;
   grid-template-rows: auto auto;
-  column-gap: 12px;
+  column-gap: 16px;
   row-gap: 2px;
   align-items: start;
   padding: 10px 0;
 }
-.appt-logo {
-  grid-row: 1 / span 2;
-  grid-column: 1;
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  margin-top: 2px;
-  border-radius: 4px;
-  background: var(--bg);
-}
 .appt-org {
   grid-row: 1;
-  grid-column: 2;
+  grid-column: 1;
   font-weight: 600;
   font-size: 16px;
   color: var(--fg);
@@ -231,14 +221,14 @@ strong { font-weight: 600; }
 }
 .appt-role {
   grid-row: 2;
-  grid-column: 2;
+  grid-column: 1;
   color: var(--muted);
   font-size: 14px;
   text-align: left;
 }
 .appt-date {
   grid-row: 2;
-  grid-column: 3;
+  grid-column: 2;
   font-style: italic;
   color: var(--soft);
   font-size: 13px;
@@ -246,7 +236,7 @@ strong { font-weight: 600; }
   text-align: right;
 }
 
-/* Research interests bullet list (filled dots, larger text) */
+/* Research topics plain list (no bullets) */
 .interest-list {
   list-style: none;
   padding: 0;
@@ -254,19 +244,8 @@ strong { font-weight: 600; }
   font-size: 16px;
 }
 .interest-list li {
-  padding: 6px 0 6px 20px;
-  position: relative;
+  padding: 6px 0;
   color: var(--fg);
-}
-.interest-list li::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 16px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--fg);
 }
 
 /* Two-column rows (Education / Experience) */
